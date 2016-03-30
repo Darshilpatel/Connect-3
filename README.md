@@ -1,3 +1,3 @@
-# fluffy-broccoli
+# Connect 3
 
-Redefining the way information travels from one end to the other.
+A new way to play Connect 4 
