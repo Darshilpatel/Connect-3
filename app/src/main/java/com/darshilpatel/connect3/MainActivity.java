@@ -20,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
         ImageView counter = (ImageView) view;
         int tappedCounter = Integer.parseInt(counter.getTag().toString());
 
+        if (gameState[tappedCounter] == 2 ){
+            gameState[tappedCounter] = currentActivePlayer;
+
+
 
                 counter.setTranslationY(-1000);
 
@@ -30,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 counter.setImageResource(R.drawable.red);
                 currentActivePlayer = 0;
             }
+        }
 
 
         counter.animate().translationYBy(1000f).rotation(360).setDuration(300);
