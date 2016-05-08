@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,13 +49,33 @@ public class MainActivity extends AppCompatActivity {
             if (gameState[winningPosition[0]] ==  gameState[winningPosition[1]] &&
                     gameState[winningPosition[1]] == gameState[winningPosition[2]] && gameState[winningPosition[0]] != 2){
 
-                System.out.println("You Win!");
+                String winner = "Red";
+
+                if (gameState[winningPosition[0]]== 0 ){
+
+                    winner = "Yellow";
+                }
+
+               TextView winnerMessage = (TextView) findViewById(R.id.winnerMessage);
 
 
+                winnerMessage.setText(winner + " has won");
+
+                LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLayout);
+
+                layout.setVisibility(View.VISIBLE);
 
             }
         }
 
+
+    }
+
+    public void playAgin (View view){
+
+        LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLayout);
+
+        layout.setVisibility(View.INVISIBLE);
 
     }
 
