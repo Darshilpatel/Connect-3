@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     boolean gameStatus = true;
 
-    int [] gameState = {2,2,2,2,2,2,2,2,2}; // 2 = unplayed piece
+    int [] gameState = {2,2,2,2,2,2,2,2,2}; // 2 = unplaced piece
     int [][] winningPositions = {{0,1,2}, {3,4,5}, {6,7,8}, {0,3,6}, {1,4,7}, {2,5,8}, {0,4,8}, {2,4,6}};
 
 
@@ -29,12 +29,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         ImageView counter = (ImageView) view;
+
+        System.out.println(counter.getTag().toString());
         int tappedCounter = Integer.parseInt(counter.getTag().toString());
 
         if (gameState[tappedCounter] == 2  && gameStatus){
-            gameState[tappedCounter] = currentActivePlayer;
 
-                counter.setTranslationY(-1000);
+            gameState[tappedCounter] = currentActivePlayer;
+            counter.setTranslationY(-1000f);
 
         if (currentActivePlayer == 0 ){
             counter.setImageResource(R.drawable.yellow);
@@ -43,10 +45,12 @@ public class MainActivity extends AppCompatActivity {
                 counter.setImageResource(R.drawable.red);
                 currentActivePlayer = 0;
             }
+
+            counter.animate().translationYBy(1000f).rotation(360).setDuration(300);
         }
 
 
-        counter.animate().translationYBy(1000f).rotation(360).setDuration(300);
+
 
         for (int[] winningPosition : winningPositions){
             if (gameState[winningPosition[0]] ==  gameState[winningPosition[1]] &&
