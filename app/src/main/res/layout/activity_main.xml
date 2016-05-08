@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.darshilpatel.connect3.MainActivity">
+    tools:context="com.darshilpatel.connect3.MainActivity"
+    android:background="#00b9f1">
 
     <GridLayout
         android:layout_width="match_parent"
@@ -122,6 +123,34 @@
             android:tag="8" />
 
     </GridLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#E53A40"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:padding="30dp"
+        android:alpha="0"
+        android:id="@+id/playAgainLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/winnerMessage"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="playAgain"
+            android:id="@+id/playAgainButton"
+            android:layout_gravity="center_horizontal"
+            android:onClick="playAgain" />
+    </LinearLayout>
 
 
 </RelativeLayout>

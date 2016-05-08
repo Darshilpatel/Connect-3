@@ -1,5 +1,6 @@
 package com.darshilpatel.connect3;
 
+import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
         if (gameState[tappedCounter] == 2 ){
             gameState[tappedCounter] = currentActivePlayer;
 
-
-
                 counter.setTranslationY(-1000);
 
         if (currentActivePlayer == 0 ){
@@ -49,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
                 System.out.println("You Win!");
 
+
+
             }
         }
 
@@ -59,7 +60,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
     }
+
+
+
 }
 
 // TODO 1. Add game logic
