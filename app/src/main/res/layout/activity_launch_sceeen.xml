@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#00b9f1" />
+        android:background="#434A54" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
             android:textSize="53px"
             android:gravity="center"
             android:text="Made with ♥ by Darshil Patel"
-            android:textColor="#3B2C35" />
+            android:textColor="#ffffff" />
     </LinearLayout>
 
 

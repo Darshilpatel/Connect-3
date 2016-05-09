@@ -2,6 +2,7 @@ package com.darshilpatel.connect3;
 
 import android.content.Intent;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Layout;
@@ -41,9 +42,19 @@ public class MainActivity extends AppCompatActivity {
         if (currentActivePlayer == 0 ){
             counter.setImageResource(R.drawable.yellow);
             currentActivePlayer = 1;
+
+            MediaPlayer yellowPlay = MediaPlayer.create(this, R.raw.pops7);
+
+            yellowPlay.start();
+
+
         }  else {
                 counter.setImageResource(R.drawable.red);
                 currentActivePlayer = 0;
+
+            MediaPlayer redPlay = MediaPlayer.create(this, R.raw.pops8);
+
+            redPlay.start();
             }
 
             counter.animate().translationYBy(1000f).rotation(360).setDuration(300);
@@ -64,14 +75,29 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                TextView winnerMessage = (TextView) findViewById(R.id.winnerMessage);
-
-
-                winnerMessage.setText(winner + " has won");
-
+                winnerMessage.setText(winner + " wins!");
                 LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLayout);
-
                 layout.setVisibility(View.VISIBLE);
 
+
+                MediaPlayer popupPlay = MediaPlayer.create(this, R.raw.beeps13);
+
+                popupPlay.start();
+
+            } else {
+
+                boolean gameIsOver = true;
+
+                for (int counterState: gameState) {
+                    if (counterState == 2) gameIsOver = false;
+                }
+
+                if (gameIsOver){
+                    TextView winnerMessage = (TextView) findViewById(R.id.winnerMessage);
+                    winnerMessage.setText("It's a draw");
+                    LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLayout);
+                    layout.setVisibility(View.VISIBLE);
+                }
             }
         }
 

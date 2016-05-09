@@ -2,6 +2,7 @@ package com.darshilpatel.connect3;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,7 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 public class LaunchSceeen extends AppCompatActivity {
-    private static final int SPLASH_TIME = 5000;
+    private static final int SPLASH_TIME = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,10 @@ public class LaunchSceeen extends AppCompatActivity {
         setContentView(R.layout.activity_launch_sceeen);
 
         new BackgroundTask().execute();
+
+        MediaPlayer startPlay = MediaPlayer.create(this, R.raw.start);
+
+        startPlay.start();
     }
 
 

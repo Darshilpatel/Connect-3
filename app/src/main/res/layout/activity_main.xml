@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.darshilpatel.connect3.MainActivity"
-    android:background="#00b9f1">
+    android:background="#ED5565">
 
     <GridLayout
         android:layout_width="match_parent"
